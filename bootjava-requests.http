@@ -1,0 +1,117 @@
+PUT http://localhost:8080/api/account
+Content-Type: application/json
+Authorization: Basic user@gmail.com password
+
+{
+  "id": 7,
+  "email": "user@gmail.com",
+  "firstName": "New_First",
+  "lastName": "New_Last"
+}
+
+<> 2021-01-01T110012.422.json
+###
+
+PUT http://localhost:8080/api/account
+Content-Type: application/json
+Authorization: Basic user@gmail.com password
+
+{
+  "email": "user@gmail.com",
+  "firstName": "New_First",
+  "lastName": "New_Last"
+}
+###
+
+GET http://localhost:8080/api/account
+Authorization: Basic user@gmail.com password
+
+<> 2021-01-01T105947.200.json
+###
+
+POST http://localhost:8080/api/account/register
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "firstName": "Test",
+  "lastName": "Test",
+  "password": "test"
+}
+###
+
+GET http://localhost:8080/api/account
+Authorization: Basic test@test.com test
+
+<> 2021-01-01T105947.401.json
+###
+
+GET http://localhost:8080/api/account
+
+<> 2021-01-01T105947-1.401.json
+###
+
+GET http://localhost:8080/login
+
+<> 2021-01-01T105947.404.json
+###
+GET http://localhost:8080/logout
+###
+GET http://localhost:8080/api/account
+
+<> 2021-01-01T105947-2.401.json
+###
+GET http://localhost:8080/api/users
+
+GET http://localhost:8080/api/account
+
+<> 2021-01-01T105947-3.401.json
+###
+
+GET http://localhost:8080/api/users
+curl -s http://localhost:8080/api/account --user user@gmail.com:password
+POST http://localhost:8080/api/users
+Content-Type: application/json
+Authorization: Basic admin@javaops.ru admin
+
+{
+ "email": "test@test.com",
+ "firstName": "Test",
+ "lastName": "Test",
+ "password": "test",
+ "roles": [ "USER","ADMIN"]
+}
+
+<> 2021-01-01T105947.400.html
+###
+
+GET http://localhost:8080/api
+GET http://localhost:8080/api/users
+GET http://localhost:8080/api/users/1
+GET http://localhost:8080/api/users/search
+GET http://localhost:8080/api/users/search/by-email?email=User@gmail.com
+GET http://localhost:8080/api/users/search/by-lastname?lastName=Admin
+GET http://localhost:8080/api/users/search/by-lastname?lastName=last
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "firstName": "Test",
+  "lastName": "Test",
+  "password": "test",
+  "roles": [ "ROLE_USER"]
+}
+
+<> 2021-01-01T105947-1.400.html
+
+###
+PATCH http://localhost:8080/api/users/1
+Content-Type: application/json
+
+{
+  "lastName": "User+Last"
+}
+
+<> 2021-01-01T105947-4.401.json
+###
